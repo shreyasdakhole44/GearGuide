@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textPrimary font-sans antialiased m-0 overflow-x-hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
+
+/* Hide scrollbar for horizontal scrolling but keep functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glass effect utilities */
+.glass-panel {
+  @apply bg-surfaceHighlight/80 backdrop-blur-xl border border-white/5 shadow-2xl rounded-2xl;
+}
+
+.glass-card {
+  @apply bg-[#0F172A]/80 backdrop-blur-lg border border-white/5 rounded-2xl transition-all duration-300 hover:bg-[#0F172A] hover:border-[#06B6D4]/30 hover:shadow-2xl hover:-translate-y-1;
+}
+
+/* Clean Professional Typography */
+.heading-display {
+  @apply font-display font-medium tracking-tight;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-lg bg-primary text-[#020617] font-semibold transition-all duration-300 hover:bg-[#22D3EE] hover:shadow-[0_0_20px_#06B6D466] hover:scale-105 active:scale-95 flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-lg border border-white/20 text-white font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95 flex items-center justify-center;
+}
+
+.btn-danger {
+  @apply px-6 py-3 rounded-lg bg-danger/20 text-danger border border-danger/30 font-semibold transition-all duration-300 hover:bg-danger hover:text-white hover:shadow-[0_0_20px_#ef444466] hover:scale-105 active:scale-95;
+}
+
+/* Input styles */
+.input-glass {
+  @apply w-full px-5 py-3.5 bg-background/50 border border-white/10 rounded-xl text-white outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surfaceHighlight transition-all duration-300;
+}
+
+/* Premium Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.2);
+  }
+}
+
+.glow-cyan {
+  animation: pulse-glow 3s infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.3);
+}
